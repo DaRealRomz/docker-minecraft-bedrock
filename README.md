@@ -4,7 +4,7 @@ This docker image provides a Minecraft Bedrock Server that will download the sel
 
 To start it, run
 
-    docker run -d -e VERSION=<version> -p 19132:19132 darealromz/minecraft-bedrock:latest
+    docker run -d -e VERSION=<version> -p 19132:19132/udp darealromz/minecraft-bedrock:latest
 
 At the time of writing, the version was 1.14.32.1
 
