@@ -11,7 +11,7 @@ rm -f server.zip
 # copy server files
 cp {permissions.json,server.properties,whitelist.json} $HOME/data
 rm -f permissions.json server.properties whitelist.json
-cp -n ./* $HOME/data
+cp -rn ./* $HOME/data
 rm -rf ./*
 
 # move to the server directory
