@@ -21,6 +21,7 @@ USER minecraft
 # create directories
 RUN mkdir /minecraft/data
 RUN mkdir /minecraft/run
+RUN mkdir /minecraft/temp
 
 # start command
 CMD ["/usr/local/bin/start.sh"]

@@ -1,16 +1,21 @@
 #!/bin/bash
 set -e
 
+# download the server
+cd $HOME/temp
+rm -rf ./*
+wget https://minecraft.azureedge.net/bin-linux/bedrock-server-$VERSION.zip -O server.zip
+unzip -o server.zip
+rm -f server.zip
+
+# copy server files
+cp {permissions.json,server.properties,whitelist.json} $HOME/data
+rm -f permissions.json server.properties whitelist.json
+cp -n ./* $HOME/data
+rm -rf ./*
+
 # move to the server directory
 cd $HOME/data
-
-# download server.jar if it does not exist
-# if [ ! -e bedrock_server ]
-# then
-  wget https://minecraft.azureedge.net/bin-linux/bedrock-server-$VERSION.zip -O server.zip
-  unzip server.zip
-  rm server.zip
-# fi
 
 # create the stdin pipe for the server console
 rm -f $HOME/run/console
